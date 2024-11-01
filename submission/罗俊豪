@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+    int  a[21] = {0,1,2,3,4,5,6,7,8,9,10}, i, m, n, t ;
+    printf("Input  ten new words=\n");
+    for (i = 11; i <= 20; i++)
+    {
+        scanf_s("%d", &a[i]);
+    }
+    for (n = 1; n < 20; n++)
+    {
+        for (m = 1; m <= 20 - n; m++)
+        {
+            if (a[m] > a[m + 1])
+            {
+                t = a[m + 1], a[m + 1] = a[m], a[m] = t;
+            }
+            else continue;
+        }
+    }
+    for (i = 0; i <= 20; i++)
+    {
+        printf("输出%d\n", a[i]);
+    }
+    return 0;
+}//（备注：事先有一个数组，在输入一个新的数组，在进行冒泡排序）
